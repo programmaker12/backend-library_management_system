@@ -30,5 +30,5 @@
     </root>
 
     <!-- Custom logger for your application -->
-    <logger name="com.thinkinnovative.demo_gradle" level="DEBUG" />
+    <logger name="com.thinkinnovative.library_management_system" level="DEBUG" />
 </configuration>
