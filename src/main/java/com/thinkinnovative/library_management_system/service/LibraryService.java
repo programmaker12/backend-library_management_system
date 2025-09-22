@@ -20,4 +20,6 @@ public interface LibraryService {
     public BookDTO getBookById(Integer id);
     public Page<BookDTO>getBookByPage(int page, int size);
     public List<String> getAllBookTitles();
+    public List<BookDTO> getAllBookByAuthor(String author);
+    public List<Object> getAllBooksWithAvailableStock();
 }

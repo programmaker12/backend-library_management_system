@@ -141,4 +141,16 @@ public class LibraryController  {
     public List<String> getBookTitles() {
         return libraryService.getAllBookTitles();
     }
+    @GetMapping("/books/{author}/author")
+    public List<BookDTO> getBookByAuthor(@PathVariable String author) {
+
+    return libraryService.getAllBookByAuthor(author);
+    }
+    @GetMapping("/books/author")
+    public List<Object> getBookWithAvailableStock() {
+
+        return libraryService.getAllBooksWithAvailableStock();
+    }
+
+
 }

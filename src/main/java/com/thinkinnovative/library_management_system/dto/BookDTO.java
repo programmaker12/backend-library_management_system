@@ -11,6 +11,7 @@ public class BookDTO {
     private Long statusId;   // Add statusId field
     private String statusName; // Add statusName field
     private Queue queue;
+    private Integer stock;
     public Queue getInqueue() {
         return queue;
     }
@@ -40,6 +41,17 @@ public class BookDTO {
         this.publishedYear = publishedYear;
 
         this.queue = queue;
+    }
+
+    public BookDTO(Integer bookID, String title, String author, String genre, Integer publishedYear, Integer stock, Long statusId, String statusName) {
+        this.bookID = bookID;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.publishedYear = publishedYear;
+        this.stock = stock;
+        this.statusId = statusId;
+        this.statusName = statusName;
     }
 
     public Integer getBookID() {
@@ -96,5 +108,13 @@ public class BookDTO {
 
     public void setStatusName(String statusName) {
         this.statusName = statusName;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 }

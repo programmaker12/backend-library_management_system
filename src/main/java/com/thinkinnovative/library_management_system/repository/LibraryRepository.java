@@ -19,6 +19,13 @@ public interface LibraryRepository extends JpaRepository <LibraryInformation, Lo
             "JOIN l.status s")  // JOIN with the StatusTable
     List<BookDTO> findAllBooksWithStatus();
 
+    @Query("SELECT new com.thinkinnovative.library_management_system.dto.BookDTO(" +
+            "l.bookID, l.title, l.author, l.genre, l.publishedYear, l.stock, " +
+            "s.statusID, s.statusName) " +   // Perform JOIN on status_id
+            "FROM LibraryInformation l " +
+            "JOIN l.status s")  // JOIN with the StatusTable
+    List<BookDTO> findAllBooksWithStatusAndStock();
+
     @Query("SELECT l FROM LibraryInformation l WHERE l.bookID = :bookID")
     LibraryInformation findBook1ById(Integer bookID);
 
